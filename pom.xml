@@ -11,7 +11,7 @@
 
 	<name>Request Response Model</name>
 	<description>A Spring Boot library for handling request and response models with encryption and masking capabilities</description>
-	<url>https://github.com/yourusername/request-response-model</url>
+	<url>https://github.com/kirandpolawar/request-response-model</url>
 
 	<licenses>
 		<license>
@@ -24,15 +24,14 @@
 	<developers>
 		<developer>
 			<name>Kiran P</name>
-			<email>kiran.polawar@hotmail.com</email>
+			<email>kirand.d.polawar@gmail.com</email>
 		</developer>
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/yourusername/request-response-model.git</connection>
-		<developerConnection>scm:git:ssh://github.com/yourusername/request-response-model.git</developerConnection>
-		<url>https://github.com/yourusername/request-response-model</url>
-		<tag>HEAD</tag>
+		<connection>scm:git:https://github.com/kirankp/request-response-model.git</connection>
+		<developerConnection>scm:git@github.com:kirandpolawar/request-response-model.git</developerConnection>
+		<url>https://github.com/kirandpolawar/request-response-model.git</url>
 	</scm>
 
 	<modules>
