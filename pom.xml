@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 		http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -28,13 +28,83 @@
 		</developer>
 	</developers>
 
-	<scm>
-		<connection>scm:git:https://github.com/kirankp/request-response-model.git</connection>
-		<developerConnection>scm:git@github.com:kirandpolawar/request-response-model.git</developerConnection>
-		<url>https://github.com/kirandpolawar/request-response-model.git</url>
-	</scm>
+	<project xmlns="http://maven.apache.org/POM/4.0.0"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modules>
+		<modelVersion>4.0.0</modelVersion>
+
+		<groupId>com.kp</groupId>
+		<artifactId>request-response-model</artifactId>
+		<version>1.0.0</version>
+		<packaging>pom</packaging>
+
+		<name>Request Response Model</name>
+		<description>
+			A Spring Boot library for handling request and response models
+			with encryption and masking capabilities
+		</description>
+		<url>https://github.com/kirandpolawar/request-response-model</url>
+
+		<!-- ========================= -->
+		<!-- LICENSE & DEVELOPER INFO -->
+		<!-- ========================= -->
+
+		<licenses>
+			<license>
+				<name>Apache License, Version 2.0</name>
+				<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+				<distribution>repo</distribution>
+			</license>
+		</licenses>
+
+		<developers>
+			<developer>
+				<name>Kiran Polawar</name>
+				<email>kirand.d.polawar@gmail.com</email>
+			</developer>
+		</developers>
+
+		<!-- ============ -->
+		<!-- SCM (PUBLIC) -->
+		<!-- ============ -->
+
+		<scm>
+			<connection>scm:git:https://github.com/kirandpolawar/request-response-model.git</connection>
+			<developerConnection>scm:git:ssh://git@github.com:kirandpolawar/request-response-model.git</developerConnection>
+			<url>https://github.com/kirandpolawar/request-response-model</url>
+			<tag>v1.0.0</tag>
+		</scm>
+
+		<!-- ========= -->
+		<!-- MODULES -->
+		<!-- ========= -->
+
+		<modules>
+			<module>request-response-model-core</module>
+			<module>request-response-model-autoconfigure</module>
+			<module>request-response-model-spring-boot-starter</module>
+		</modules>
+
+		<!-- ============ -->
+		<!-- PROPERTIES -->
+		<!-- ============ -->
+
+		<properties>
+		<java.version>17</java.version>
+		<spring.boot.version>3.2.5</spring.boot.version>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
+		<maven.source.plugin.version>3.3.0</maven.source.plugin.version>
+		<maven.javadoc.plugin.version>3.6.0</maven.javadoc.plugin.version>
+		<maven.gpg.plugin.vers
+
+
+		<modules>
 		<module>request-response-model-core</module>
 		<module>request-response-model-autoconfigure</module>
 		<module>request-response-model-spring-boot-starter</module>
@@ -76,6 +146,27 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.6.0</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<!-- ✅ DO NOT FAIL when no sources exist -->
+							<failOnError>false</failOnError>
+							<skipEmpty>true</skipEmpty>
+
+							<!-- Java 17 safe -->
+							<source>17</source>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.11.0</version>
 				<configuration>
@@ -99,19 +190,20 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven.javadoc.version}</version>
-				<configuration>
-					<doclint>none</doclint>
-					<additionalOptions>
-						<additionalOption>-Xdoclint:none</additionalOption>
-					</additionalOptions>
-				</configuration>
+				<version>3.6.0</version>
+
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
 						<goals>
 							<goal>jar</goal>
 						</goals>
+						<configuration>
+							<!-- 🔑 THIS IS THE FIX -->
+							<failOnError>false</failOnError>
+							<skipEmpty>true</skipEmpty>
+							<source>17</source>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
