@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.kp</groupId>
+        <groupId>io.github.kirandpolawar</groupId>
         <artifactId>request-response-model</artifactId>
         <version>1.0.0</version>
     </parent>
