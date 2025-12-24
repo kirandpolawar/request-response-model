@@ -1,7 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.kp</groupId>
@@ -10,8 +11,15 @@
 	<packaging>pom</packaging>
 
 	<name>Request Response Model</name>
-	<description>A Spring Boot library for handling request and response models with encryption and masking capabilities</description>
+	<description>
+		A Spring Boot library for handling request and response models
+		with encryption and masking capabilities
+	</description>
 	<url>https://github.com/kirandpolawar/request-response-model</url>
+
+	<!-- ========================= -->
+	<!-- LICENSE & DEVELOPER INFO -->
+	<!-- ========================= -->
 
 	<licenses>
 		<license>
@@ -23,75 +31,37 @@
 
 	<developers>
 		<developer>
-			<name>Kiran P</name>
+			<name>Kiran Polawar</name>
 			<email>kirand.d.polawar@gmail.com</email>
 		</developer>
 	</developers>
 
-	<project xmlns="http://maven.apache.org/POM/4.0.0"
-			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-			 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<!-- ============ -->
+	<!-- SCM (PUBLIC) -->
+	<!-- ============ -->
 
-		<modelVersion>4.0.0</modelVersion>
-
-		<groupId>com.kp</groupId>
-		<artifactId>request-response-model</artifactId>
-		<version>1.0.0</version>
-		<packaging>pom</packaging>
-
-		<name>Request Response Model</name>
-		<description>
-			A Spring Boot library for handling request and response models
-			with encryption and masking capabilities
-		</description>
+	<scm>
+		<connection>scm:git:https://github.com/kirandpolawar/request-response-model.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:kirandpolawar/request-response-model.git</developerConnection>
 		<url>https://github.com/kirandpolawar/request-response-model</url>
+		<tag>v1.0.0</tag>
+	</scm>
 
-		<!-- ========================= -->
-		<!-- LICENSE & DEVELOPER INFO -->
-		<!-- ========================= -->
+	<!-- ========= -->
+	<!-- MODULES -->
+	<!-- ========= -->
 
-		<licenses>
-			<license>
-				<name>Apache License, Version 2.0</name>
-				<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-				<distribution>repo</distribution>
-			</license>
-		</licenses>
+	<modules>
+		<module>request-response-model-core</module>
+		<module>request-response-model-autoconfigure</module>
+		<module>request-response-model-spring-boot-starter</module>
+	</modules>
 
-		<developers>
-			<developer>
-				<name>Kiran Polawar</name>
-				<email>kirand.d.polawar@gmail.com</email>
-			</developer>
-		</developers>
+	<!-- ============ -->
+	<!-- PROPERTIES -->
+	<!-- ============ -->
 
-		<!-- ============ -->
-		<!-- SCM (PUBLIC) -->
-		<!-- ============ -->
-
-		<scm>
-			<connection>scm:git:https://github.com/kirandpolawar/request-response-model.git</connection>
-			<developerConnection>scm:git:ssh://git@github.com:kirandpolawar/request-response-model.git</developerConnection>
-			<url>https://github.com/kirandpolawar/request-response-model</url>
-			<tag>v1.0.0</tag>
-		</scm>
-
-		<!-- ========= -->
-		<!-- MODULES -->
-		<!-- ========= -->
-
-		<modules>
-			<module>request-response-model-core</module>
-			<module>request-response-model-autoconfigure</module>
-			<module>request-response-model-spring-boot-starter</module>
-		</modules>
-
-		<!-- ============ -->
-		<!-- PROPERTIES -->
-		<!-- ============ -->
-
-		<properties>
+	<properties>
 		<java.version>17</java.version>
 		<spring.boot.version>3.2.5</spring.boot.version>
 
@@ -102,26 +72,11 @@
 		<maven.source.plugin.version>3.3.0</maven.source.plugin.version>
 		<maven.javadoc.plugin.version>3.6.0</maven.javadoc.plugin.version>
 		<maven.gpg.plugin.version>3.1.0</maven.gpg.plugin.version>
-
-
-		<modules>
-		<module>request-response-model-core</module>
-		<module>request-response-model-autoconfigure</module>
-		<module>request-response-model-spring-boot-starter</module>
-	</modules>
-
-	<properties>
-		<java.version>17</java.version>
-		<spring.boot.version>3.2.5</spring.boot.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<maven.compiler.source>17</maven.compiler.source>
-		<maven.compiler.target>17</maven.compiler.target>
-		<maven.source.version>3.3.0</maven.source.version>
-		<maven.javadoc.version>3.6.0</maven.javadoc.version>
-		<maven.gpg.version>3.1.0</maven.gpg.version>
-		<nexus.staging.version>1.6.13</nexus.staging.version>
 	</properties>
+
+	<!-- ========================== -->
+	<!-- MAVEN CENTRAL (NEW PORTAL) -->
+	<!-- ========================== -->
 
 	<distributionManagement>
 		<repository>
@@ -129,6 +84,10 @@
 			<url>https://central.sonatype.com/api/v1/publisher</url>
 		</repository>
 	</distributionManagement>
+
+	<!-- ================= -->
+	<!-- DEPENDENCY MGMT -->
+	<!-- ================= -->
 
 	<dependencyManagement>
 		<dependencies>
@@ -142,42 +101,29 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<!-- ========= -->
+	<!-- BUILD -->
+	<!-- ========= -->
+
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>3.6.0</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<configuration>
-							<!-- ✅ DO NOT FAIL when no sources exist -->
-							<failOnError>false</failOnError>
-							<skipEmpty>true</skipEmpty>
 
-							<!-- Java 17 safe -->
-							<source>17</source>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+			<!-- COMPILER -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version>
+				<version>${maven.compiler.plugin.version}</version>
 				<configuration>
-					<source>17</source>
-					<target>17</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+
+			<!-- SOURCES JAR (REQUIRED BY CENTRAL) -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>${maven.source.version}</version>
+				<version>${maven.source.plugin.version}</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -187,10 +133,39 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<!-- JAVADOC JAR (SAFE FOR EMPTY MODULES) -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.6.0</version>
+
+				<configuration>
+					<!-- Do NOT fail when packages have no sources -->
+					<failOnError>false</failOnError>
+					<failOnWarnings>false</failOnWarnings>
+					<skipEmpty>true</skipEmpty>
+					<quiet>true</quiet>
+
+					<!-- Disable report mode -->
+					<aggregate>false</aggregate>
+
+					<!-- Disable doclint completely -->
+					<doclint>none</doclint>
+					
+					<!-- Java 17 -->
+					<source>17</source>
+					
+					<!-- Additional options to suppress all errors and warnings -->
+					<additionalOptions>
+						<additionalOption>-Xdoclint:none</additionalOption>
+						<additionalOption>-quiet</additionalOption>
+						<additionalOption>-Xmaxwarns</additionalOption>
+						<additionalOption>0</additionalOption>
+						<additionalOption>-Xmaxerrs</additionalOption>
+						<additionalOption>0</additionalOption>
+					</additionalOptions>
+				</configuration>
 
 				<executions>
 					<execution>
@@ -199,18 +174,23 @@
 							<goal>jar</goal>
 						</goals>
 						<configuration>
-							<!-- 🔑 THIS IS THE FIX -->
+							<!-- Ensure no failures for jar goal -->
 							<failOnError>false</failOnError>
+							<failOnWarnings>false</failOnWarnings>
 							<skipEmpty>true</skipEmpty>
-							<source>17</source>
+							<quiet>true</quiet>
+							<doclint>none</doclint>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+
+
+			<!-- GPG SIGNING -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
-				<version>${maven.gpg.version}</version>
+				<version>${maven.gpg.plugin.version}</version>
 				<executions>
 					<execution>
 						<id>sign-artifacts</id>
@@ -221,6 +201,8 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<!-- CENTRAL PUBLISHING -->
 			<plugin>
 				<groupId>org.sonatype.central</groupId>
 				<artifactId>central-publishing-maven-plugin</artifactId>
@@ -233,6 +215,11 @@
 					<transitionCheckTimeoutSeconds>600</transitionCheckTimeoutSeconds>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
+	<reporting>
+		<excludeDefaults>true</excludeDefaults>
+	</reporting>
+
 </project>

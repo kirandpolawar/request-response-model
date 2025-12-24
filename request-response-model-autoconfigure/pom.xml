@@ -47,6 +47,26 @@
                     <target>17</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <failOnError>false</failOnError>
+                    <failOnWarnings>false</failOnWarnings>
+                    <skipEmpty>true</skipEmpty>
+                    <quiet>true</quiet>
+                    <doclint>none</doclint>
+                    <source>17</source>
+                    <additionalOptions>
+                        <additionalOption>-Xdoclint:none</additionalOption>
+                        <additionalOption>-quiet</additionalOption>
+                        <additionalOption>-Xmaxwarns</additionalOption>
+                        <additionalOption>0</additionalOption>
+                        <additionalOption>-Xmaxerrs</additionalOption>
+                        <additionalOption>0</additionalOption>
+                    </additionalOptions>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
